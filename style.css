@@ -48,16 +48,15 @@ body {
   color: #f1f1f1;
 }
 .blocs-menu span::after {
-    content: '';
-    display: block;
-    width: 0;
-    margin: 5px auto 0 auto;
-    height: 2px;
-
+  content: "";
+  display: block;
+  width: 0;
+  margin: 5px auto 0 auto;
+  height: 2px;
 }
 
 .blocs-menu span:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* Portrait */
@@ -73,8 +72,7 @@ body {
   height: 150px;
   border-radius: 50%;
   position: relative;
-  box-shadow: 26px 26px 53px #292929,
-              -26px -26px 53px #3d3d3d;
+  box-shadow: 26px 26px 53px #292929, -26px -26px 53px #3d3d3d;
 }
 
 .cercle-portrait img {
@@ -99,5 +97,5 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
