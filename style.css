@@ -80,7 +80,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% -50%);
+  transform: translate(-50%, -50%);
 }
 
 .logo-cercle {
@@ -102,7 +102,10 @@ body {
 
 @media screen and (max-width: 1300px) {
   .nav-gauche {
-    display: none;
+    display: -300px !important;
+  }
+  .menu-visible {
+    left: 0px !important;
   }
 
   .btn-rond-menu {
