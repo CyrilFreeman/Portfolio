@@ -102,7 +102,21 @@ body {
 
 @media screen and (max-width: 1300px) {
   .nav-gauche {
-    display: -300px !important;
+    left: -300px !important;
+    width: 250px;
+    min-height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .blocs-menu:nth-child(1) {
+    display: none;
+  }
+  .blocs-menu:nth-child(7) {
+    display: none;
   }
   .menu-visible {
     left: 0px !important;
