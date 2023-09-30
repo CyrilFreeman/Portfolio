@@ -120,6 +120,7 @@ body {
   }
   .menu-visible {
     left: 0px !important;
+    width: 100%;
   }
 
   .btn-rond-menu {
