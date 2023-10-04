@@ -226,3 +226,60 @@ h1{
   font-size: 18px;
   transition: transform 0.2s ease-in-out;
 }
+.btn-acc:hover{
+  transform: scale(1.02);
+}
+.btn-acc1 {
+  margin: 10px 0 0 60px;
+}
+.btn-acc2 {
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: 700;
+}
+.medias {
+  display: flex;
+  margin: 25px 59px;
+}
+.media {
+  width: 60px;
+  height: 60px;
+  background: #333;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.media2 {
+  background: transparent;
+  border: 2px solid #333;
+}
+.icone-medias {
+  width: 30px;
+}
+.btn-rond {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  bottom: 20px;
+  left: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 #333;
+  background: #333;
+  animation:  pulse 1.3s infinite;
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+  }
+}
+.logo-btn-rond-acc {
+  width: 35px;
+}
