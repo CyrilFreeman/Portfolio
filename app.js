@@ -19,15 +19,28 @@ if (window.matchMedia("(max-width: 1300px)")) {
 
 //animation écriture
 
-const txtAnim = document.querySelector('.txt-animation');
+const txtAnim = document.querySelector(".txt-animation");
 
 let typewriter = new Typewriter(txtAnim, {
-  loop:false,
+  loop: false,
   deleteSpeed: 20,
-})
+});
 
 typewriter
-.pauseFor(1800)
-.changeDelay(20)
-.typeString('Je suis Cyril Freeman')
-.start()
+  .pauseFor(1800)
+  .changeDelay(20)
+  .typeString("Je suis Cyril Freeman")
+  .pauseFor(300)
+  .typeString("<strong>, dévelopeur Full-Stack</strong> !")
+  .pauseFor(1000)
+  .deleteChars(13)
+  .typeString('<span style="color: #27ae60;"> CSS </span> !')
+  .pauseFor(1000)
+  .deleteChars(6)
+  .typeString('<span style="color: #27ae60;"> Javascript</span> !')
+  .pauseFor(1000)
+  .deleteChars(13)
+  .typeString('<span style="color: #27ae60;"> React</span> !')
+  .pauseFor(1000)
+  .deleteChars(8)
+  .start();
