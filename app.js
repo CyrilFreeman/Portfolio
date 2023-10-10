@@ -16,3 +16,18 @@ if (window.matchMedia("(max-width: 1300px)")) {
     });
   });
 }
+
+//animation écriture
+
+const txtAnim = document.querySelector('.txt-animation');
+
+let typewriter = new Typewriter(txtAnim, {
+  loop:false,
+  deleteSpeed: 20,
+})
+
+typewriter
+.pauseFor(1800)
+.changeDelay(20)
+.typeString('Je suis Cyril Freeman')
+.start()
