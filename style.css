@@ -493,75 +493,68 @@ h1 {
 /* Medias Presentation */
 
 @media screen and (max-width: 1300px) {
-
-  .container-presentation{
-      padding-left: 0px;
+  .container-presentation {
+    padding-left: 0px;
   }
   .titre-pres {
-      padding-left: 0px;
+    padding-left: 0px;
   }
-
 }
 
 @media screen and (max-width: 1100px) {
-
   .fond-forme {
-      width: 100%;
-      height: 150%;
-      transform: rotate(0) translateY(0) translateX(0);
+    width: 100%;
+    height: 150%;
+    transform: rotate(0) translateY(0) translateX(0);
   }
   .titre-pres {
-      margin: 0 0 20px 0;
-      padding-top: 50px;
+    margin: 0 0 20px 0;
+    padding-top: 50px;
   }
   .container-presentation {
-      flex-direction: column;
+    flex-direction: column;
   }
   .pres-gauche {
-      width: 80%;
-      flex-shrink: 1;
-      margin-bottom: 10px;
-      padding: 20px 0;
+    width: 80%;
+    flex-shrink: 1;
+    margin-bottom: 10px;
+    padding: 20px 0;
   }
   .pres-gauche h3 {
-      font-size: 20px;
-      letter-spacing: 0px;
+    font-size: 20px;
+    letter-spacing: 0px;
   }
 
   .pres-gauche p {
-      font-size: 16px;
+    font-size: 16px;
   }
   .pres-droite {
-      width: 80%;
-      flex-shrink: 1;
+    width: 80%;
+    flex-shrink: 1;
   }
-  .liste-presentation{
-      padding: 0 0;
+  .liste-presentation {
+    padding: 0 0;
   }
 }
 
-
 @media screen and (max-width: 700px) {
-
   .container-presentation {
-      margin-top: 10px;
-      margin-bottom: 70px;
+    margin-top: 10px;
+    margin-bottom: 70px;
   }
   .titre-pres {
-      font-size: 24px;
-      margin: 0 10px
+    font-size: 24px;
+    margin: 0 10px;
   }
   .pres-gauche h3 {
-      font-size: 20px;
+    font-size: 20px;
   }
   .chiffre-style {
-      font-size: 30px;
+    font-size: 30px;
   }
   .txt-liste {
-      font-size: 17px;
+    font-size: 17px;
   }
-
-
 }
 
 /*------------------------- Section Portfolio ----------------*/
@@ -569,31 +562,31 @@ h1 {
 .portfolio {
   width: 100%;
 }
-.titre-port{
+.titre-port {
   text-align: center;
   padding: 50px 0;
   font-size: 50px;
   padding-left: 300px;
 }
-  .cont-portfolio {
-    width: 100%;
-    height: auto;
-    margin:  0 auto 100px auto;
-    padding-left: 300px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
-  .item {
-    margin: 20px;
-    width: 420px;
-    height: 400px;
-    background: #f0f2f0;
-    color: #333;
-    transition: transform 0.3s ease-out;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
+.cont-portfolio {
+  width: 100%;
+  height: auto;
+  margin: 0 auto 100px auto;
+  padding-left: 300px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.item {
+  margin: 20px;
+  width: 420px;
+  height: 400px;
+  background: #f0f2f0;
+  color: #333;
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 .item:hover {
   transform: translateY(-5px);
 }
@@ -608,7 +601,7 @@ h1 {
 }
 
 .item h3 {
-  padding:  10px 10px 0;
+  padding: 10px 10px 0;
   font-size: 22px;
 }
 
@@ -631,7 +624,7 @@ h1 {
   overflow: hidden;
 }
 .btn-projets::after {
-  content :"";
+  content: "";
   height: 240px;
   width: 100px;
   background: rgba(255, 255, 255, 0.4);
@@ -648,35 +641,103 @@ h1 {
 /* Média portfolio */
 
 @media screen and (max-width: 1300px) {
-
-  .cont-portfolio{
-      padding-left: 0;
+  .cont-portfolio {
+    padding-left: 0;
   }
   .titre-port {
-      font-size: 40px;
-      margin: 50px 0 70px;
-      padding-left: 0;
+    font-size: 40px;
+    margin: 50px 0 70px;
+    padding-left: 0;
   }
-
 }
 @media screen and (max-width: 500px) {
-
   .titre-port {
-      margin: 10px 0;
-      padding: 30px 0;
+    margin: 10px 0;
+    padding: 30px 0;
   }
   .item {
-      height: 420px;
+    height: 420px;
   }
   .cont-img-port {
-      height: auto;
+    height: auto;
   }
-
 }
 @media screen and (max-width: 340px) {
-
   .item {
-      height: 380px;
+    height: 380px;
   }
+}
+/*--------- Section Range ---------- */
 
+.section-range {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 200px;
+  border-bottom: 1px dashed #333;
+  background: #485563;
+  background-image: linear-gradient(to right, #29323c, #485563);
+  color: #f1f1f1;
+  position: relative;
+  z-index: -1;
+}
+.range-cont {
+  position: relative;
+}
+.titre-exp{
+  font-size: 40px;
+  text-align: center;
+  margin: 80px 0 90px 0;
+  padding-left: 300px;
+}
+.grille-skill{
+  display: grid;
+  grid-template: repeat(3,80px) / repeat(2, 500px);
+  grid-gap: 50px;
+  padding-left: 300px;
+}
+.barre-skill{
+  height: 15px;
+  background: rgb(167, 146,243);
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.barre-grises {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 500px;
+  height: 15px;
+  background: rgb(216, 216, 216);
+  border-radius: 5px;
+}
+.b1 {
+  width: 90%;
+}
+.b2 {
+  width: 75%;
+  background: rgb(243,237,146);
+}
+.b3 {
+  width: 70%;
+  background: rgb(243,237,146);
+}
+.b4 {
+  width: 80%;
+}
+.b5 {
+  width: 70%;
+}
+.b6 {
+  width: 80%;
+  background: rgb(243,237,146);
+}
+.label-skill {
+  font-size: 24px;
 }
