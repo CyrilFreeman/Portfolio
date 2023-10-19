@@ -687,21 +687,21 @@ h1 {
 .range-cont {
   position: relative;
 }
-.titre-exp{
+.titre-exp {
   font-size: 40px;
   text-align: center;
   margin: 80px 0 90px 0;
   padding-left: 300px;
 }
-.grille-skill{
+.grille-skill {
   display: grid;
-  grid-template: repeat(3,80px) / repeat(2, 500px);
+  grid-template: repeat(3, 80px) / repeat(2, 500px);
   grid-gap: 50px;
   padding-left: 300px;
 }
-.barre-skill{
+.barre-skill {
   height: 15px;
-  background: rgb(167, 146,243);
+  background: rgb(167, 146, 243);
   border-radius: 5px;
   position: absolute;
   left: 0;
@@ -722,11 +722,11 @@ h1 {
 }
 .b2 {
   width: 75%;
-  background: rgb(243,237,146);
+  background: rgb(243, 237, 146);
 }
 .b3 {
   width: 70%;
-  background: rgb(243,237,146);
+  background: rgb(243, 237, 146);
 }
 .b4 {
   width: 80%;
@@ -736,7 +736,7 @@ h1 {
 }
 .b6 {
   width: 80%;
-  background: rgb(243,237,146);
+  background: rgb(243, 237, 146);
 }
 .label-skill {
   font-size: 24px;
@@ -745,59 +745,183 @@ h1 {
 /* Medias Range */
 
 @media screen and (max-width: 1400px) {
-  .grille-skill{
-      grid-template: repeat(3,80px) / repeat(2,450px);
+  .grille-skill {
+    grid-template: repeat(3, 80px) / repeat(2, 450px);
   }
   .barre-grises {
-      width: 450px;
+    width: 450px;
   }
 }
 
 @media screen and (max-width: 1300px) {
-
   .section-range {
-      padding-left: 0;
+    padding-left: 0;
   }
   .titre-exp {
-      padding-left: 0;
+    padding-left: 0;
   }
   .grille-skill {
-      grid-template: repeat(6,80px) / 600px;
-      padding-left: 0;
+    grid-template: repeat(6, 80px) / 600px;
+    padding-left: 0;
   }
   .barre-grises {
-      width: 600px;
+    width: 600px;
   }
-
 }
 
 @media screen and (max-width: 700px) {
-
   .grille-skill {
-      grid-template: repeat(6,80px) / 400px;
+    grid-template: repeat(6, 80px) / 400px;
   }
   .barre-grises {
-      width: 400px
+    width: 400px;
   }
-
 }
 @media screen and (max-width: 450px) {
-
-  .section-range{
-      padding-bottom: 100px;
+  .section-range {
+    padding-bottom: 100px;
   }
   .titre-exp {
-      font-size: 30px;
-      margin: 50px 0 60px 0;
+    font-size: 30px;
+    margin: 50px 0 60px 0;
   }
   .label-skill {
-      font-size: 20px;
+    font-size: 20px;
   }
-  .grille-skill{
-      grid-template: repeat(6,80px) / 300px;
-      grid-gap: 40px;
+  .grille-skill {
+    grid-template: repeat(6, 80px) / 300px;
+    grid-gap: 40px;
   }
   .barre-grises {
-      width: 300px;
+    width: 300px;
+  }
+}
+
+/* --- Section experience travail */
+
+.travail-exp {
+  width: calc(100%-300px);
+  height: auto;
+  margin-left: auto;
+  padding-bottom: 100px;
+}
+
+.titre-travail-exp {
+  text-align: center;
+  margin: 70px 0;
+  font-size: 40px;
+  color: #333;
+}
+.cont-exp-travail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.barre-verticale {
+  height: 1000px;
+  width: 5px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: -30px;
+}
+.boule-ico {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boule-ico img {
+  width: 25px;
+}
+.flex-cont-bloc-exp {
+  width: 800px;
+  flex-shrink: 1;
+  height: 1000px;
+  position: relative;
+}
+.bloc {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 37.5px;
+  cursor: pointer;
+  border: 1px solid #333;
+  position: relative;
+}
+.contenu-bloc {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  background: #ffffff;
+  transition: transform 0.25s ease-in-out;
+  position: relative;
+  transform: translate(10px, -10px);
+}
+.contenu-bloc:hover {
+  transform: translate(0);
+}
+.bloc1 {
+  background: #fb97a0;
+}
+.bloc2 {
+  background: #bfe2ca;
+}
+.bloc3 {
+  background: #a6daef;
+}
+.bloc4 {
+  background: #d0e2ec;
+}
+.titre-section-bloc {
+  font-family: "Abril Fatface", sans-serif;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+/* Media section travail exp */
+@media screen and (max-width: 1300px) {
+  .travail-exp {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .barre-verticale {
+    height: 1200px;
+  }
+  .bloc {
+    height: 250px;
+    margin-bottom: 37.5px;
+  }
+  .barre-verticale {
+    margin-left: 60px;
+  }
+  .flex-cont-bloc-exp {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .txt-section {
+    font-size: 16px;
+  }
+  .bloc {
+    height: 400px;
+  }
+  .barre-verticale {
+    height: 1800px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .txt-section {
+    font-size: 15px;
   }
 }
