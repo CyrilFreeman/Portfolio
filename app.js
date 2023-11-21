@@ -45,20 +45,18 @@ typewriter
   .deleteChars(8)
   .start();
 
+// Animation Contact
 
-  //Animation Contact
+const input_fields = document.querySelectorAll("input");
 
-  const input_fields = document.querySelector('input');
+for (let i = 0; i < input_fields.length; i++) {
+  let field = input_fields[i];
 
-  for(let i = 0; i < input_fields.maxLength; i++) {
-    let field = input_fields[i];
-
-    field.addEventListener('input', (e) => {
-          if(e.target.value !== ''){
-            e.target.parentNode.classList.add('animation')
-    } else if (e.target.value == ''){
-      e.target.parentNode.classList.remove('animation')
+  field.addEventListener("input", (e) => {
+    if (e.target.value !== "") {
+      e.target.parentNode.classList.add("animation");
+    } else if (e.target.value == "") {
+      e.target.parentNode.classList.remove("animation");
     }
-  })
-
+  });
 }

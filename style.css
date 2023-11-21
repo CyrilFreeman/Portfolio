@@ -1077,3 +1077,26 @@ textarea:focus {
     justify-content: center;
   }
 }
+
+/* Animation Contact */
+
+.form-groupe:focus-within label,
+.form-groupe.animation label {
+  top: 0px;
+  transform: translateY(-100%);
+  color: #8b97d7;
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+  padding-left: 300px;
+}
+@media screen and (max-width: 1300px) {
+  footer {
+    padding-left: 0px;
+  }
+}
