@@ -82,3 +82,46 @@ TL1
 window.addEventListener('load', () => {
     TL1.play();
 })
+
+// Animation ScrollMagic GSAP presentation
+
+const presentationContainer = document.querySelector('.presentation')
+const titrePres = document.querySelector('.titre-pres');
+const presGauche = document.querySelector('.pres-gauche')
+const listePres = document.querySelectorAll('.item-liste')
+
+const tlpres = new TimelineMax();
+
+tlpres
+.from(titrePres, {y: -200, opacity: 0, duration: 0.6})
+.from(presGauche, {y:-20, opacity: 0, duration: 0.6}, '-=0.5')
+.staggerFrom(listePres, 1, {opacity: 0}, 0.2, '-=0.5')
+
+const controller = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+    triggerElement: presentationContainer,
+    triggerHook: 0.5,
+    reverse: false
+})
+.setTween(tlpres)
+.addTo(controller)
+
+//Anim Portfolio
+
+const portfolioContainer = document.querySelector('portfolio')
+const titrePortfolio = document. querySelector('.titre-port')
+const itemPortfolio = document.querySelectorAll('.vague1')
+
+const tlPorfolio = new TimelineMax();
+tlPortfolio
+.from(titrePortfolio, {y: -50, opacity: 0, duration: 0.5})
+.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
+
+const scene2 = new ScrollMagic.Scene ({
+  triggerElement: portfolioContainer,
+  triggerHook: 0.5,
+  reverse: false
+})
+.setTween(tlPorfolio)
+.addTo(controller)
