@@ -63,65 +63,104 @@ for (let i = 0; i < input_fields.length; i++) {
 
 // Anim GSAP + ScrollMagic
 
-const navbar = document.querySelector('.nav-gauche');
-const titre = document.querySelector('h1');
-const btn = document.querySelectorAll('.btn-acc')
-const btnMedias = document.querySelectorAll('.media')
-const btnRondAccueil = document.querySelector('.btn-rond')
+const navbar = document.querySelector(".nav-gauche");
+const titre = document.querySelector("h1");
+const btn = document.querySelectorAll(".btn-acc");
+const btnMedias = document.querySelectorAll(".media");
+const btnRondAccueil = document.querySelector(".btn-rond");
 
+const TL1 = gsap.timeline({ paused: true });
 
-const TL1 = gsap.timeline({paused: true});
+TL1.to(navbar, { left: "0px", ease: Power3.easeOut, duration: 0.6 })
+  .from(titre, { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 })
+  .staggerFrom(btn, 1, { opacity: 0 }, 0.2, "-=0.30")
+  .staggerFrom(btnMedias, 1, { opacity: 0 }, 0.2, "-=0.75")
+  .from(
+    btnRondAccueil,
+    { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 },
+    "-=1"
+  );
 
-TL1 
-.to(navbar, {left: '0px', ease: Power3.easeOut, duration: 0.6})
-.from(titre, {y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4})
-.staggerFrom(btn, 1, {opacity: 0}, 0.2, '-=0.30')
-.staggerFrom(btnMedias, 1, {opacity: 0}, 0.2, '-=0.75')
-.from(btnRondAccueil, {y: -50, opacity:0, ease: Power3.easeOut, duration: 0.4}, '-=1')
-
-window.addEventListener('load', () => {
-    TL1.play();
-})
+window.addEventListener("load", () => {
+  TL1.play();
+});
 
 // Animation ScrollMagic GSAP presentation
 
-const presentationContainer = document.querySelector('.presentation')
-const titrePres = document.querySelector('.titre-pres');
-const presGauche = document.querySelector('.pres-gauche')
-const listePres = document.querySelectorAll('.item-liste')
+const presentationContainer = document.querySelector(".presentation");
+const titrePres = document.querySelector(".titre-pres");
+const presGauche = document.querySelector(".pres-gauche");
+const listePres = document.querySelectorAll(".item-liste");
 
 const tlpres = new TimelineMax();
 
 tlpres
-.from(titrePres, {y: -200, opacity: 0, duration: 0.6})
-.from(presGauche, {y:-20, opacity: 0, duration: 0.6}, '-=0.5')
-.staggerFrom(listePres, 1, {opacity: 0}, 0.2, '-=0.5')
+  .from(titrePres, { y: -200, opacity: 0, duration: 0.6 })
+  .from(presGauche, { y: -20, opacity: 0, duration: 0.6 }, "-=0.5")
+  .staggerFrom(listePres, 1, { opacity: 0 }, 0.2, "-=0.5");
 
 const controller = new ScrollMagic.Controller();
 
 const scene = new ScrollMagic.Scene({
-    triggerElement: presentationContainer,
-    triggerHook: 0.5,
-    reverse: false
+  triggerElement: presentationContainer,
+  triggerHook: 0.5,
+  reverse: false,
 })
-.setTween(tlpres)
-.addTo(controller)
+  .setTween(tlpres)
+  .addTo(controller);
 
-//Anim Portfolio
+// Anim portfolio
 
-const portfolioContainer = document.querySelector('portfolio')
-const titrePortfolio = document. querySelector('.titre-port')
-const itemPortfolio = document.querySelectorAll('.vague1')
+const portfolioContainer = document.querySelector(".portfolio");
+const titrePortfolio = document.querySelector(".titre-port");
+const itemPortfolio = document.querySelectorAll(".vague1");
 
-const tlPorfolio = new TimelineMax();
+const tlPortfolio = new TimelineMax();
+
 tlPortfolio
-.from(titrePortfolio, {y: -50, opacity: 0, duration: 0.5})
-.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
+  .from(titrePortfolio, { y: -50, opacity: 0, duration: 0.5 })
+  .staggerFrom(itemPortfolio, 1, { opacity: 0 }, 0.2, "-=0.5");
 
-const scene2 = new ScrollMagic.Scene ({
+const scene2 = new ScrollMagic.Scene({
   triggerElement: portfolioContainer,
   triggerHook: 0.5,
-  reverse: false
+  reverse: false,
 })
-.setTween(tlPorfolio)
-.addTo(controller)
+  .setTween(tlPortfolio)
+  // .addIndicators()
+  .addTo(controller);
+
+// Vague 2
+
+const itemPortfolio2 = document.querySelectorAll(".vague2");
+
+const tlPortfolio2 = new TimelineMax();
+
+tlPortfolio2.staggerFrom(itemPortfolio2, 1, { opacity: 0 }, 0.2, "-=0.5");
+
+const scene3 = new ScrollMagic.Scene({
+  triggerElement: itemPortfolio,
+  triggerHook: 0.2,
+  reverse: false,
+})
+  .setTween(tlPortfolio2)
+  // .addIndicators()
+  .addTo(controller);
+
+// Vague 3
+
+const itemPortfolio3 = document.querySelectorAll(".vague3");
+
+const tlPortfolio3 = new TimelineMax();
+
+tlPortfolio3.staggerFrom(itemPortfolio3, 1, { opacity: 0 }, 0.2, "-=0.5");
+
+const scene4 = new ScrollMagic.Scene({
+  triggerElement: itemPortfolio2,
+  triggerHook: 0.2,
+  reverse: false,
+})
+  .setTween(tlPortfolio3)
+  // .addIndicators()
+  .addTo(controller)
+  .addTo(controller);
