@@ -102,7 +102,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .nav-gauche {
     left: -300px !important;
     width: 250px;
@@ -291,7 +291,7 @@ h1 {
 
 /* Medias Accueil */
 
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .accueil {
     width: 100%;
     background-position: center;
@@ -299,7 +299,7 @@ h1 {
 }
 @media screen and (max-width: 1000px) {
   .accueil {
-    height: var(--tablet-breakpoint);
+    height: 700px;
     min-height: 0;
   }
   h1 {
@@ -321,7 +321,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: var(--tablet-breakpoint)) {
+@media screen and (max-width: 700px) {
   .accueil {
     height: 600px;
   }
@@ -495,7 +495,7 @@ h1 {
 
 /* Medias Presentation */
 
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .container-presentation {
     padding-left: 0px;
   }
@@ -540,7 +540,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: var(--tablet-breakpoint)) {
+@media screen and (max-width: 700px) {
   .container-presentation {
     margin-top: 10px;
     margin-bottom: 70px;
@@ -643,7 +643,7 @@ h1 {
 }
 /* Média portfolio */
 
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .cont-portfolio {
     padding-left: 0;
   }
@@ -756,7 +756,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .section-range {
     padding-left: 0;
   }
@@ -772,7 +772,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: var(--tablet-breakpoint)) {
+@media screen and (max-width: 700px) {
   .grille-skill {
     grid-template: repeat(6, 80px) / 400px;
   }
@@ -890,7 +890,7 @@ h1 {
 }
 
 /* Media section travail exp */
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .travail-exp {
     width: 100%;
   }
@@ -947,7 +947,7 @@ h1 {
 .txt-par:nth-child(1) {
   padding-left: 300px;
 }
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .txt-par {
     font-size: 25px;
     margin: 0 30px;
@@ -956,7 +956,7 @@ h1 {
     padding-left: 0px;
   }
 }
-@media screen and (max-width: var(--tablet-breakpoint)) {
+@media screen and (max-width: 700px) {
   .txt-par {
     font-size: 22px;
     margin: 0 25px;
@@ -1069,7 +1069,7 @@ textarea:focus {
   background-position: 100%;
   border: 3px solid #fff;
 }
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   .section-contact h2 {
     padding: 70px 0 0 0;
   }
@@ -1098,7 +1098,7 @@ footer {
   padding-top: 100px;
   padding-left: 300px;
 }
-@media screen and (max-width: var(--destop-breakpoint)) {
+@media screen and (max-width: 1300px) {
   footer {
     padding-left: 0px;
   }
