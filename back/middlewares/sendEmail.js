@@ -1,27 +1,33 @@
+const express = require("express");
+const router = express.Router();
 const mailer = require("./mailer");
 
-const sendEmail = (req, next) => {
-  const review = req.body;
-  const emailOptions = {
-    from: "cyril.r.freeman@gmail.com",
-    to: "cyril.r.freeman@gmail.com",
-    subject: "Contact venant du portfolio",
+
+router.post("/send-email", (req, res) => {
+  const { firstName, lastName, message, email } = req.body;
+
+  const mailOptions = {
+    from: "your_email@gmail.com",
+    to: "destination_email@example.com",
+    subject: "Sujet de l'email",
     html: `
-    <p>Bonjour Cyril,</p>
-    <p>Vous avez reçu un nouvel avis de la part de ${review.firstName} ${review.lastName}.</p>
-    <p>Message : ${review.message}</p>
-    <p>Si vous souhaitez contacter ${review.firstName}, envoyez-lui un mail à l'adresse suivante: ${review.email} </p>
-  `,
+        <p>Bonjour,</p>
+        <p>Vous avez reçu un nouvel email de la part de ${firstName} ${lastName} (${email}) :</p>
+        <p>${message}</p>
+      `,
   };
 
-  mailer.sendMail(emailOptions, (err, info) => {
-    if (err) {
-      console.error(err);
+  mailer.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error(error);
+      res
+        .status(500)
+        .send("Une erreur est survenue lors de l'envoi de l'email.");
     } else {
-      console.info(info);
+      console.info("Email envoyé : " + info.response);
+      res.status(200).send("Email envoyé avec succès !");
     }
-    next();
   });
-};
+});
 
-module.exports = { sendEmail };
+module.exports = router;
