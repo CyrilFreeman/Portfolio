@@ -190,3 +190,68 @@ const scene5 = new ScrollMagic.Scene({
 .setTween(tlCompetences)
 .addTo(controller);
 
+//Envoie Courriel
+
+document.getElementById("contactForm").addEventListener("submit", (e) => {
+  e.preventDefault(); // Empêche le rechargement de la page après l'envoi
+
+  const form = document.getElementById("contactForm");
+  const formData = new FormData(form);
+
+  fetch("/send-email", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Email envoyé avec succès !");
+      } else {
+        alert("Une erreur est survenue lors de l'envoi de l'email.");
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur :", error);
+      alert("Une erreur est survenue lors de l'envoi de l'email.");
+    });
+});
+
+//Validation champs de formulaire
+
+const form = document.querySelector('form');
+
+// Ajout d'un écouteur d'événement sur le formulaire pour écouter le submit
+form.addEventListener("submit", (event) => {
+    // On empêche le comportement par défaut
+    event.preventDefault();
+
+const baliseNom = document.getElementById('nom');
+baliseNom.addEventListener('change', (event) => {
+    const valeurNom = event.target.value;
+    if (valeurNom === "") {
+        console.log('Le champ nom est vide');
+    } else {
+        console.log('Le champ nom est rempli');
+    }
+});
+
+const balisePrenom = document.getElementById('prenom');
+balisePrenom.addEventListener('change', (event) => {
+    const valeurPrenom = event.target.value;
+    if (valeurPrenom=== "") {
+        console.log('Le champ Prenom est vide');
+    } else {
+        console.log('Le champ Prenom est rempli');
+    }
+});
+
+const baliseText = document.getElementById('txt');
+baliseText.addEventListener('change', (event) => {
+    const valeurPrenom = event.target.value;
+    if (valeurPrenom=== "") {
+        console.log('Le champ text est vide');
+    } else {
+        console.log('Le champ text est rempli');
+    }
+});
+
+});
