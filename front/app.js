@@ -165,93 +165,103 @@ const scene4 = new ScrollMagic.Scene({
   .addTo(controller)
   .addTo(controller);
 
-  // Animation range
+// Animation range
 
-const sectionComp = document.querySelector('.section-range');
-const titreComp = document.querySelector('.titre-exp');
-const allLabel = document.querySelectorAll('.label-skill')
-const allPourcent = document.querySelectorAll('.number-skill')
-const allBarres = document.querySelectorAll('.barre-skill')
-const allShadowBarres = document.querySelectorAll('.barre-grises')
+const sectionComp = document.querySelector(".section-range");
+const titreComp = document.querySelector(".titre-exp");
+const allLabel = document.querySelectorAll(".label-skill");
+const allPourcent = document.querySelectorAll(".number-skill");
+const allBarres = document.querySelectorAll(".barre-skill");
+const allShadowBarres = document.querySelectorAll(".barre-grises");
 
 const tlCompetences = new TimelineMax();
 
 tlCompetences
-.from(titreComp, {opacity: 0, duration: 0.6})
-.staggerFrom(allLabel, 0.5, {y: -50, opacity:0}, 0.1, '-=0.5')
-.staggerFrom(allPourcent, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-.staggerFrom(allShadowBarres, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-.staggerFrom(allBarres, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
+  .from(titreComp, { opacity: 0, duration: 0.6 })
+  .staggerFrom(allLabel, 0.5, { y: -50, opacity: 0 }, 0.1, "-=0.5")
+  .staggerFrom(allPourcent, 0.5, { y: -10, opacity: 0 }, 0.1, "-=1")
+  .staggerFrom(allShadowBarres, 0.5, { y: -10, opacity: 0 }, 0.1, "-=1")
+  .staggerFrom(allBarres, 0.5, { y: -10, opacity: 0 }, 0.1, "-=1");
 
 const scene5 = new ScrollMagic.Scene({
-    triggerElement: sectionComp,
-    reverse: false
+  triggerElement: sectionComp,
+  reverse: false,
 })
-.setTween(tlCompetences)
-.addTo(controller);
+  .setTween(tlCompetences)
+  .addTo(controller);
 
-//Envoie Courriel
+// //Envoie Courriel
 
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-  e.preventDefault(); // Empêche le rechargement de la page après l'envoi
+// document.getElementById("contactForm").addEventListener("submit", (e) => {
+//   e.preventDefault(); // Empêche le rechargement de la page après l'envoi
 
-  const form = document.getElementById("contactForm");
-  const formData = new FormData(form);
+//   const form = document.getElementById("contactForm");
+//   const formData = new FormData(form);
 
-  fetch("/send-email", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("Email envoyé avec succès !");
-      } else {
-        alert("Une erreur est survenue lors de l'envoi de l'email.");
-      }
-    })
-    .catch((error) => {
-      console.error("Erreur :", error);
-      alert("Une erreur est survenue lors de l'envoi de l'email.");
-    });
-});
+//   fetch("/send-email", {
+//     method: "POST",
+//     body: formData,
+//   })
+//     .then((response) => {
+//       if (response.ok) {
+//         alert("Email envoyé avec succès !");
+//       } else {
+//         alert("Une erreur est survenue lors de l'envoi de l'email.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Erreur :", error);
+//       alert("Une erreur est survenue lors de l'envoi de l'email.");
+//     });
+// });
 
-//Validation champs de formulaire
+function afficherEmail(nom, email) {
+  let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${nom} et je viens de réaliser le score  sur le site d'Azertype !`;
+  location.href = mailto;
+}
 
-const form = document.querySelector('form');
+/**
+ * Cette fonction prend un nom en paramètre et valide qu'il est au bon format
+ * ici : deux caractères au minimum
+ * @param {string} nom
+ * @throws {Error}
+ */
+function validerNom(nom) {
+  if (nom.length < 2) {
+    throw new Error("Le nom est trop court. ");
+  }
+}
 
-// Ajout d'un écouteur d'événement sur le formulaire pour écouter le submit
+/**
+ * Cette fonction prend un email en paramètre et valide qu'il est au bon format.
+ * @param {string} email
+ * @throws {Error}
+ */
+function validerEmail(email) {
+  let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+");
+  if (!emailRegExp.test(email)) {
+    throw new Error("L'email n'est pas valide.");
+  }
+}
+
+function gererFormulaire() {
+  try {
+    let baliseNom = document.getElementById("nom");
+    let nom = baliseNom.value;
+    validerNom(nom);
+
+    let baliseEmail = document.getElementById("email");
+    let email = baliseEmail.value;
+    validerEmail(email);
+    afficherEmail(nom, email);
+  } catch (erreur) {
+    console.log(erreur.message);
+  }
+}
+
+// Gestion de l'événement submit sur le formulaire de partage.
+let form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
-    // On empêche le comportement par défaut
-    event.preventDefault();
-
-const baliseNom = document.getElementById('nom');
-baliseNom.addEventListener('change', (event) => {
-    const valeurNom = event.target.value;
-    if (valeurNom === "") {
-        console.log('Le champ nom est vide');
-    } else {
-        console.log('Le champ nom est rempli');
-    }
-});
-
-const balisePrenom = document.getElementById('prenom');
-balisePrenom.addEventListener('change', (event) => {
-    const valeurPrenom = event.target.value;
-    if (valeurPrenom=== "") {
-        console.log('Le champ Prenom est vide');
-    } else {
-        console.log('Le champ Prenom est rempli');
-    }
-});
-
-const baliseText = document.getElementById('txt');
-baliseText.addEventListener('change', (event) => {
-    const valeurPrenom = event.target.value;
-    if (valeurPrenom=== "") {
-        console.log('Le champ text est vide');
-    } else {
-        console.log('Le champ text est rempli');
-    }
-});
-
+  event.preventDefault();
+  gererFormulaire();
 });
