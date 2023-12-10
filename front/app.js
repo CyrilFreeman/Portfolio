@@ -241,7 +241,7 @@ function validerEmail(email) {
   let emailRegExp = new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+");
   if (!emailRegExp.test(email)) {
     throw new Error("L'email n'est pas valide.");
-  }
+  } 
 }
 
 function gererFormulaire() {
@@ -255,7 +255,10 @@ function gererFormulaire() {
     validerEmail(email);
     afficherEmail(nom, email);
   } catch (erreur) {
+      let baliseEmail = document.getElementById("email");
+      baliseEmail.classList.add("error");
     console.log(erreur.message);
+    
   }
 }
 
