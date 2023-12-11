@@ -1069,7 +1069,7 @@ textarea:focus {
   background-position: 100%;
   border: 3px solid #fff;
 }
-.form-groupe .error {
+.form-groupe .error, .form-groupe .error {
   border: 3px solid red;
 }
 @media screen and (max-width: 1300px) {
