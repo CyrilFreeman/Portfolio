@@ -244,8 +244,9 @@ function validerEmail(email) {
   }
 }
 
-    let baliseEmail = document.getElementById("email");
-    let baliseNom = document.getElementById("nom");
+let baliseEmail = document.getElementById("email");
+let baliseNom = document.getElementById("nom");
+let baliseValidationMessages = document.getElementById("validationMessages");
 
 function gererFormulaire() {
   try {
@@ -256,18 +257,26 @@ function gererFormulaire() {
     baliseNom.classList.remove("error");
     validerEmail(email);
     afficherEmail(nom, email);
+    baliseValidationMessages.innerHTML = "";
   } catch (erreur) {
     console.log(erreur);
-    if (erreur.message === "L'email n'est pas valide.") {
-      baliseEmail.classList.add("error");
-    } else if (erreur.message !== "L'email n'est pas valide.") {
-      baliseEmail.classList.remove("error");
-    }
+
+    // Gestion des messages d'erreur pour le nom
     if (erreur.message === "Le nom est trop court.") {
       baliseNom.classList.add("error");
-    } else if (erreur.message !== "Le nom est trop court.") {
+      baliseValidationMessages.innerHTML = `${erreur.message}`;
+    } else {
       baliseNom.classList.remove("error");
     }
+
+    // Gestion des messages d'erreur pour l'email
+    if (erreur.message === "L'email n'est pas valide.") {
+      baliseEmail.classList.add("error");
+      baliseValidationMessages.innerHTML = `${erreur.message}`;
+    } else {
+      baliseEmail.classList.remove("error");
+    }
+
     console.log(erreur.message);
   }
 }

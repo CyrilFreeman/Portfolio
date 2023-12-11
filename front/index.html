@@ -393,12 +393,10 @@
       <div class="container-form">
         <form class="form-bloc" id="contactForm">
           <div class="form-groupe">
-            <label for="nom">Prénom*</label>
-            <input type="text" required maxlength="16" id="nom" />
+            <input type="text" placeholder="Prénom*" required maxlength="16" id="nom" />
           </div>
           <div class="form-groupe">
-            <label for="email">email*</label>
-            <input type="text" required maxlength="40" id="email" />
+            <input type="text" placeholder="Email*" maxlength="40" id="email" />
           </div>
           <div class="form-groupe">
             <textarea id="txt" placeholder="Votre message" required></textarea>
@@ -408,7 +406,9 @@
             <input type="submit" value="ENVOYER" class="button-sub" />
           </div>
         </form>
+        <p id="validationMessages"></p>
       </div>
+      
     </section>
 
     <footer>Tout Droits réservés &copy;</footer>

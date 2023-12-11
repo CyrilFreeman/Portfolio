@@ -1033,10 +1033,12 @@ textarea {
   transition: 0.4s all ease-out;
   background: var(--main-background-color);
 }
+input::placeholder,
 textarea::placeholder {
   font-size: 20px;
   opacity: 0.5;
 }
+input:focus,
 textarea:focus {
   border-color: #8b97d7;
 }
@@ -1069,8 +1071,15 @@ textarea:focus {
   background-position: 100%;
   border: 3px solid #fff;
 }
-.form-groupe .error, .form-groupe .error {
+.form-groupe .error,
+.form-groupe .error {
   border: 3px solid red;
+}
+
+#validationMessages {
+  color: red;
+  position: relative;
+  z-index: 30;
 }
 @media screen and (max-width: 1300px) {
   .section-contact h2 {
@@ -1082,15 +1091,6 @@ textarea:focus {
   .form-groupe:nth-child(4) {
     justify-content: center;
   }
-}
-
-/* Animation Contact */
-
-.form-groupe:focus-within label,
-.form-groupe.animation label {
-  top: 0px;
-  transform: translateY(-100%);
-  color: #8b97d7;
 }
 
 /* Footer */
