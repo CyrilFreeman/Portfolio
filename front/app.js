@@ -71,8 +71,8 @@ const btnRondAccueil = document.querySelector(".btn-rond");
 
 const TL1 = gsap.timeline({ paused: true });
 
-TL1.to(navbar, { left: "0px", ease: Power3.easeOut, duration: 0.6 })
-  .from(titre, { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 })
+TL1.to(navbar, { left: "0px", ease: Power3.easeOut, duration: 0.7 })
+  .from(titre, { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.5 })
   .staggerFrom(btn, 1, { opacity: 0 }, 0.2, "-=0.30")
   .staggerFrom(btnMedias, 1, { opacity: 0 }, 0.2, "-=0.75")
   .from(

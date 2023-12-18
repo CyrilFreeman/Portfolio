@@ -22,10 +22,8 @@ body {
   background: var(--secondary-background-color);
   position: fixed;
   top: 0;
-  left: -300px;
   border-right: 1px dashed var(--main-background-color);
   z-index: 5;
-  transition: all 0s ease-in-out;
 }
 
 .blocs-menu {
