@@ -75,9 +75,8 @@ body {
 
 .cercle-portrait {
   margin: 20px 0;
-  width: 150px;
-  height: 150px;
-  border-radius: var(--border-radius-circle);
+  width: 100px;
+  height: 146px;
   position: relative;
   box-shadow: 26px 26px 53px #292929, -26px -26px 53px #3d3d3d;
 }
